@@ -23,6 +23,7 @@ function TaskList() {
         <tbody>
           {taskData
             ? taskData?.map((task) => {
+                console.log(task.complete);
                 return (
                   <tr>
                     <td>{task.name}</td>
@@ -31,7 +32,11 @@ function TaskList() {
                     <td>{task.complete.toString()}</td>
                     <td>{task.star.toString()}</td>
                     <td>Edit</td>
-                    <td onClick={deleteHandler} data-id={task._id}>
+                    <td
+                      onClick={deleteHandler}
+                      style={{ cursor: "pointer" }}
+                      data-id={task._id}
+                    >
                       Delete
                     </td>
                   </tr>

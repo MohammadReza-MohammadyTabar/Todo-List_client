@@ -18,6 +18,14 @@ function TaskForm() {
         [e.target.name]: e.target.value,
       };
     });
+    e.target.name === "complete" ||
+      (e.target.name === "star" &&
+        setFormData((prev) => {
+          return {
+            ...prev,
+            [e.target.name]: e.target.checked,
+          };
+        }));
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
